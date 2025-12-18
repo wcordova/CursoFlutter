@@ -44,10 +44,11 @@ class _CounterFuntionsScreenState extends State<CounterFuntionsScreen> {
           ],
         ),
       ),
-      floatingActionButton: Column(
+      floatingActionButton: Column(        
         mainAxisAlignment: MainAxisAlignment.end,
         children: [
           FloatingActionButton(
+            shape: const StadiumBorder(),
             onPressed: () {
               setState(() {
                 clickCounter++;
@@ -57,6 +58,7 @@ class _CounterFuntionsScreenState extends State<CounterFuntionsScreen> {
           ),
           const SizedBox(height: 10),
           FloatingActionButton(
+            shape: const StadiumBorder(),
             onPressed: () {
               setState(() {
                 if(clickCounter > 0) clickCounter--;
