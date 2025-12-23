@@ -19,8 +19,36 @@ class ChatScreen extends StatelessWidget {
         title: const Text('Chat Screen'),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text('Welcome to the Chat Screen!'),
+      body: _ChatView(),
+    );
+  }
+}
+
+class _ChatView extends StatelessWidget {
+  const _ChatView({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return SafeArea(
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: Column(
+          children: [
+            
+            Expanded(
+              child: ListView.builder(
+                itemCount: 100,
+                itemBuilder: (context, index) {
+                  return Text('Hola mundo $index');
+                }
+                )
+            ),
+            
+            Text('Chat messages go here'),
+          ],
+        ),
       ),
     );
   }
