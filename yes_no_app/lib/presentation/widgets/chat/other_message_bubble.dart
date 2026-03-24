@@ -1,0 +1,54 @@
+import 'package:flutter/material.dart';
+
+class OtherMessageBubble extends StatelessWidget {
+
+  const OtherMessageBubble({
+    super.key
+  });
+
+  @override
+  Widget build(BuildContext context) {
+
+    final colors = Theme.of(  context).colorScheme;
+
+   return Column(
+    crossAxisAlignment: CrossAxisAlignment.start,
+    children: [
+      Container(
+        decoration: BoxDecoration(
+          color: colors.secondary,
+          borderRadius: BorderRadius.circular(20)
+        ),
+        padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+        margin: const EdgeInsets.symmetric(vertical: 5),
+        child: const Text('Cillum incididunt minim aliqua occaecat.'),
+      ),
+      const SizedBox(height: 5,),
+      const Text('12:00 PM', style: TextStyle(fontSize: 10, color: Colors.black54),),
+      _ImageBubble(),   
+      const SizedBox(height: 10,),   
+    ],
+   );
+   
+  }
+
+}
+
+class _ImageBubble extends StatelessWidget {  
+
+  @override
+  Widget build(BuildContext context) {
+    final size = MediaQuery.of( context ).size;
+    print(size);
+
+    return ClipRRect(
+        borderRadius: BorderRadius.circular(20),
+        child: Image.network(
+          'https://yesno.wtf/assets/yes/5-64c2804cc48057b94fd0b3eaf323d92c.gif',
+          width: size.width * 0.7,
+          height: 150,
+          fit: BoxFit.cover,
+        ),
+      );
+  }
+}
